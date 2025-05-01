@@ -1,0 +1,18 @@
+## Model routing
+- Default bulk: gpt-3.5-turbo
+- Summary & advanced Q&A: gpt-4o
+- Switch to gpt-4o-mini when env USE_MINI=true
+
+## Interview distribution
+- If persona_pack == "broad", evenly split interviews across personas.
+- If "custom", generate persona first via GPT-4o prompt.
+
+## Chat feature
+- Endpoint /chat accepts job_id + question.
+- Must stream answer; reuse report JSON where possible.
+- Max 1 000 chat turns / month / Starter seat.
+
+## Code standards
+- pytest ≥ 80 %  
+- OPENAI_API_KEY, DB creds via env only  
+- Respect file layout /workflows /reports /chat /tests
